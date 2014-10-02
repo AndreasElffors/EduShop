@@ -295,7 +295,7 @@ namespace EduShop_Unsecure.Controllers
             }
             else
             {
-                // User does not have a password so remove any validation errors caused by a missing OldPassword field
+                // UserModel does not have a password so remove any validation errors caused by a missing OldPassword field
                 ModelState state = ModelState["OldPassword"];
                 if (state != null)
                 {
