@@ -18,15 +18,16 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="@Url.Action("Index","Home")">
-                    <img src="http://edument.se/EdumentImg/Images/Site/edument_logo.png" alt="logo" style=" max-height: 70px;" />
+                    <img src="http://edument.se/EdumentImg/Images/Site/edument_logo.png" alt="logo" style=" max-height: 50px;" />
                 </a></div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Products", "Product", "Home")</li>
-                    <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    <li>@Html.ActionLink("Login", "Login", "ManageAccount")</li>
+                    <li>@Html.ActionLink("Register", "Register", "ManageAccount")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+                @*@Html.Partial("_LoginPartial")*@
             </div>
         </div>
     </div>
