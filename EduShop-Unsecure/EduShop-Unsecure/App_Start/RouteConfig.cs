@@ -18,6 +18,7 @@ namespace EduShop_Unsecure
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
+       
         }
     }
 }
