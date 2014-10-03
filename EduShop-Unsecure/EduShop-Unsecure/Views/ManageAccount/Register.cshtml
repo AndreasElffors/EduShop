@@ -3,17 +3,60 @@
 @{
     ViewBag.Title = "Register";
 }
+<link href="~/Content/Forms.css" rel="stylesheet" />
 
-@using (Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Email, "Email:")
-    @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
-    <br />
-    @Html.LabelFor(m => Model.Password, "Password:")
-    @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
-    <br />
-    <input type="submit" class="btn btn-success" value="Log In" />
-}
-
+<article class="contentcontainer">
+    <section style="padding:20px;">
+        <div class="col-md-6">
+            <h1 style="font-family: verdana; color:gray;">Create an account.</h1>
+            <h3 style="font-family: verdana; color:gray; text-align:justify;">This is where you register a new account to become a member at EduShop</h3>
+            <br />
+            @using (Html.BeginForm())
+            {
+                @Html.LabelFor(m => m.Email, "Email:")
+                @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
+                <br />
+                @Html.LabelFor(m => Model.Password, "Password:")
+                @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
+                <br/>
+                @Html.LabelFor(m => Model.Password, "Firstname:")
+                @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
+                <br/>
+                @Html.LabelFor(m => Model.Password, "Lastname:")
+                @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
+                <br/>
+                @Html.LabelFor(m => Model.Password, "Address:")
+                @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
+                <br/>
+                @Html.LabelFor(m => Model.Password, "ZIP:")
+                @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
+                <br />
+                <input type="submit" class="btn btn-success" value="Register" />
+            }
+        </div>
+        <div class="col-md-6">
+        </div>
+        <section class="row">
+            <div class="col-md-4">
+                <div class="circle">
+                    <p>Welcome to EduShop</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="circle">
+                    <div class="circletext">
+                        <p>This website is designed for you to try your security knowledge</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="circle">
+                    <p>Welcome to EduShop</p>
+                </div>
+            </div>
+            </div>
+            <div style="clear:both;"></div>
+        </section>
+</article>
 
 

@@ -10,15 +10,17 @@ namespace EduShop_Unsecure.Controllers
     public class ManageAccountController : Controller
     {
         // GET: ManageAccount
+        [ChildActionOnly]
         public ActionResult Login()
         {
-            return View();
+            return PartialView("_Login",new UserModel());
         }
 
+        [ChildActionOnly]
         [HttpPost]
         public ActionResult Login(UserModel model)
         {
-            return View(model);
+            return PartialView("_Login");
         }
 
         public ActionResult Register()

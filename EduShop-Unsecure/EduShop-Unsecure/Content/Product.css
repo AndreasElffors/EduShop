@@ -1,11 +1,11 @@
 ﻿.sidebar {
     float: left;
-    width: 25%;
+    width: 24%;
 }
 
 .panel-default {
     float: right;
-    width: 75%;
+    width: 74%;
 }
 
 .list-group-item {
@@ -13,23 +13,24 @@
 }
 
     .list-group-item.active {
-        background-color: #355F86;
+        background-color: #521984;
         border-color: #ddd;
     }
 
         .list-group-item.active:hover,
         .list-group-item.active:focus {
-            background-color: #355F86;
+            background-color: #521984;
             border-color: #ddd;
         }
 
 a.list-group-item:hover {
-    background-color: #8CA2B6;
+    background-color: rgba(82,25,132,0.7);
+    color: #ffffff;
     border-color: #ddd;
 }
 
 .glyphicon.glyphicon-th {
-    color: #355F86;
+    color: #521984;
 }
 
 .col-sm-6.col-md-4 {
@@ -43,4 +44,12 @@ a.list-group-item:hover {
     font-size: 2rem;
     position: relative;
     top: 3px;
+}
+
+.row {
+    margin: 15px;
+}
+
+.panel.panel-default {
+    margin-right: 1%;
 }
