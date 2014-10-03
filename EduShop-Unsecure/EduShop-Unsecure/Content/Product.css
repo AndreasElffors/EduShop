@@ -13,17 +13,23 @@
 }
 
     .list-group-item.active {
-        background-color: #521984;
+        background: #521984;
         border-color: #ddd;
+        border-bottom:#521984;
     }
 
         .list-group-item.active:hover,
         .list-group-item.active:focus {
-            background-color: #521984;
+            background:#521984;
             border-color: #ddd;
         }
 
 a.list-group-item:hover {
+    background-color: rgba(82,25,132,0.7);
+    color: #ffffff;
+    border-color: #ddd;
+}
+a.list-group-item:hover>.badge {
     background-color: rgba(82,25,132,0.7);
     color: #ffffff;
     border-color: #ddd;

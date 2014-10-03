@@ -3,9 +3,13 @@
 
 .form-control {
 }
+
 .col-md-6 {
+    padding: 30px 60px;
 }
-.col-md-4 {
-    margin: 15px 0;
+
+.circle {
+    margin: auto;
+    margin-top: 15px;
     border-left: none;
 }

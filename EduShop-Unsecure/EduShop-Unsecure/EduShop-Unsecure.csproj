@@ -189,8 +189,11 @@
     <Content Include="Images\Adobe.jpg" />
     <Content Include="Images\e.jpg" />
     <Content Include="Images\Logo.svg" />
+    <Content Include="Images\Visual-Studio-2010.png" />
     <Content Include="Images\VisualStudio.Jpg" />
     <Content Include="Images\Windows.jpg" />
+    <Content Include="Images\windows8.jpg" />
+    <Content Include="Images\windows8box.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
