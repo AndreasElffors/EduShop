@@ -7,7 +7,7 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     <link href="~/Content/Layout.css" rel="stylesheet" />
-
+    <link href="~/Content/DropIt.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -30,25 +30,43 @@
                     <li>@Html.ActionLink("Login", "Login", "ManageAccount")</li>
                     <li>@Html.ActionLink("Register", "Register", "ManageAccount")</li>
                 </ul>
+                
+                
+                <ul class="menu">
+                    <li>
+                        <a href="#">Dropdown</a>
+                        <ul>
+                            <li><a href="#">Some Action 1</a></li>
+                            <li><a href="#">Some Action 2</a></li>
+                            <li><a href="#">Some Action 3</a></li>
+                            <li><a href="#">Some Action 4</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                
+                
+
                 @*@Html.Partial("_LoginPartial")*@
-                <div class="input-group" style="width:30%; margin-top:6px; float:right;">
+                <div class="input-group">
                     <input type="text" class="form-control" placeholder="Search">
                     <span class="input-group-addon glyphicon glyphicon-search"></span>
                 </div>
-
             </div>
         </div>
     </div>
+
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        @*<hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        </footer>*@
     </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script src="~/Scripts/dropit.js"></script>
 </body>
 </html>
