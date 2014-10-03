@@ -3,16 +3,17 @@
 @{
     ViewBag.Title = "Login";
 }
-
-@using (@Html.BeginForm())
-{
-    @Html.LabelFor(m => m.Email, "Email:")
-    @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
-    <br/>
-    @Html.LabelFor(m => Model.Password, "Password:")
-    @Html.TextBoxFor(m => Model.Password, new {@class = "form-control"})
-    <br/>
-   <input type="submit" class="btn btn-success" value="Log In"/> 
-}
-<br/>
-@Html.ActionLink("Click here to register","Register","ManageAccount", new {@class = "btn btn-danger"})
+<article>
+    @using (@Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.Email, "Email:")
+        @Html.TextBoxFor(m => Model.Email, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(m => Model.Password, "Password:")
+        @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
+        <br />
+        <input type="submit" class="btn btn-success" value="Log In" />
+    }
+    <br />
+    @Html.ActionLink("Click here to register", "Register", "ManageAccount", new { @class = "btn btn-danger" })
+</article>
