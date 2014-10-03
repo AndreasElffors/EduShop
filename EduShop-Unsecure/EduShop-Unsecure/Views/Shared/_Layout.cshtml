@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using EduShop_Unsecure.Models
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,25 +28,18 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("Products", "Product", "Home")</li>
-                    <li>@Html.ActionLink("Login", "Login", "ManageAccount")</li>
-                    <li>@Html.ActionLink("Register", "Register", "ManageAccount")</li>
-                </ul>
-                
-                
-                <ul class="menu">
-                    <li>
-                        <a href="#">Dropdown</a>
-                        <ul>
-                            <li><a href="#">Some Action 1</a></li>
-                            <li><a href="#">Some Action 2</a></li>
-                            <li><a href="#">Some Action 3</a></li>
-                            <li><a href="#">Some Action 4</a></li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                @Html.Action("Login","ManageAccount")
+                            </li>
                         </ul>
                     </li>
+                    <li>@Html.ActionLink("Register", "Register", "ManageAccount")</li>
                 </ul>
-                
-                
-                
+
 
                 @*@Html.Partial("_LoginPartial")*@
                 <div class="input-group">
@@ -58,10 +52,10 @@
 
     <div class="container body-content">
         @RenderBody()
-        @*<hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>*@
+        <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            </footer>
     </div>
 
     @Scripts.Render("~/bundles/jquery")
