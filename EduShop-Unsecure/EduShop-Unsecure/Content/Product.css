@@ -1,0 +1,46 @@
+﻿.sidebar {
+    float: left;
+    width: 25%;
+}
+
+.panel-default {
+    float: right;
+    width: 75%;
+}
+
+.list-group-item {
+    background-color: #f5f5f5;
+}
+
+    .list-group-item.active {
+        background-color: #355F86;
+        border-color: #ddd;
+    }
+
+        .list-group-item.active:hover,
+        .list-group-item.active:focus {
+            background-color: #355F86;
+            border-color: #ddd;
+        }
+
+a.list-group-item:hover {
+    background-color: #8CA2B6;
+    border-color: #ddd;
+}
+
+.glyphicon.glyphicon-th {
+    color: #355F86;
+}
+
+.col-sm-6.col-md-4 {
+    margin: 15px 0;
+    float: left;
+}
+
+.price {
+    margin-left: 30px;
+    color: red;
+    font-size: 2rem;
+    position: relative;
+    top: 3px;
+}
