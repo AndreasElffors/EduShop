@@ -4,36 +4,12 @@
 <article class="contentcontainer">
     <div style="margin-top:20px;">
         <link href="~/Content/Product.css" rel="stylesheet" />
+
         <div>
-            <div class="col-sm-4 col-md-3 sidebar">
-                <div class="list-group">
-                    <span href="#" class="list-group-item active">
-                        Software
-                    </span>
-                    <a href="#" class="list-group-item">
-                        Operating System
-                    </a>
-                    <a href="#" class="list-group-item">
-                        Anti-Malware Software
-                    </a>
-                    <a href="#" class="list-group-item">
-                        Adobe
-                    </a>
-                    <a href="#" class="list-group-item">
-                        Office
-                    </a>
-                    <a href="#" class="list-group-item">
-                        Plugins <span class="badge">New!</span>
-                    </a>
-                </div>
-            </div>
+            @Html.Action("Sidebar", "Home")
         </div>
 
-
-
-
-
-        <article>
+        <article class="col-md-9">
             <section>
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -42,7 +18,7 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-4">
                             <div class="thumbnail">
-                                <img src="~/Images/windows8box.jpg" alt=""/>
+                                <img src="~/Images/windows8box.jpg" alt="" />
                                 <div class="caption">
                                     <h3>Thumbnail label</h3>
                                     <p>Här ska stå lite info om produkten</p>

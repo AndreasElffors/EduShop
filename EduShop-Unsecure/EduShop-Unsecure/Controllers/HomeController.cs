@@ -20,5 +20,18 @@ namespace EduShop_Unsecure.Controllers
             return View();
         }
 
+        [ChildActionOnly]
+        public ActionResult Sidebar()
+        {
+            return PartialView("_Sidebar");
+        }
+
+        [ChildActionOnly]
+        [HttpPost]
+        public ActionResult Login()
+        {
+            return PartialView("_Sidebar");
+        }
+
     }
 }
