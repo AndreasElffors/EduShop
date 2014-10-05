@@ -10,46 +10,25 @@
         </div>
 
         <article class="col-md-9">
-            <section>
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <h4 class="panel-title"><span class="glyphicon glyphicon-th"></span> Products</h4>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="~/Images/windows8box.jpg" alt="" />
-                                <div class="caption">
-                                    <h3>Thumbnail label</h3>
-                                    <p>Här ska stå lite info om produkten</p>
-                                    <p><a href="#" class="btn btn-primary" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Info</a> <span class="price"> 999:-</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="~/Images/windows8box.jpg" alt="" />
-                                <div class="caption">
-                                    <h3>Thumbnail label</h3>
-                                    <p>Här ska stå lite info om produkten</p>
-                                    <p><a href="#" class="btn btn-primary" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Info</a> <span class="price"> 999:-</span></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="~/Images/windows8box.jpg" alt="" />
-                                <div class="caption">
-                                    <h3>Thumbnail label</h3>
-                                    <p>Här ska stå lite info om produkten</p>
-                                    <p><a href="#" class="btn btn-primary" role="button">Buy</a> <a href="#" class="btn btn-default" role="button">Info</a> <span class="price"> 999:-</span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading">
+
+                    <h4 class="panel-title"><span class="glyphicon glyphicon-th"></span> Products</h4>
                 </div>
-            </section>
+                <div class="row">
+
+                    @Html.Action("ProductPartial", "Home")
+                    @Html.Action("ProductPartial", "Home")
+                    @Html.Action("ProductPartial", "Home")
+
+                </div>
+
+            </div>
+
         </article>
+
     </div>
     <div style="clear:both"></div>
 </article>

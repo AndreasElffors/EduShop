@@ -21,6 +21,26 @@ namespace EduShop_Unsecure.Controllers
         }
 
         [ChildActionOnly]
+        public ActionResult ProductPartial()
+        {
+            return PartialView("_ProductPartial");
+        }
+
+        [ChildActionOnly]
+        [HttpPost]
+        public ActionResult ProductPartial(string product)
+        {
+            return PartialView("_ProductPartial");
+        }
+
+        public ActionResult ProductInfo()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+        [ChildActionOnly]
         public ActionResult Sidebar()
         {
             return PartialView("_Sidebar");
@@ -28,7 +48,7 @@ namespace EduShop_Unsecure.Controllers
 
         [ChildActionOnly]
         [HttpPost]
-        public ActionResult Login()
+        public ActionResult Sidebar(string Category)
         {
             return PartialView("_Sidebar");
         }

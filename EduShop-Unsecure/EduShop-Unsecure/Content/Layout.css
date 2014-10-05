@@ -1,6 +1,9 @@
 ﻿body {
     background-color:#F1F0FF;
 }
+h1,h2,h3{
+    color:gray;
+}
 
 footer{
 }
