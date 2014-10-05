@@ -48,10 +48,21 @@ namespace EduShop_Unsecure.Controllers
 
         [ChildActionOnly]
         [HttpPost]
-        public ActionResult Sidebar(string Category)
+        public ActionResult Sidebar(string category)
         {
             return PartialView("_Sidebar");
         }
 
+
+        public ActionResult Comment()
+        {
+            return PartialView("_Comment");
+        }
+        [ChildActionOnly]
+        [HttpPost]
+        public ActionResult Comment(string comment)
+        {
+            return PartialView("_Comment");
+        }
     }
 }

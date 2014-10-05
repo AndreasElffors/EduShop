@@ -29,20 +29,23 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <h3>Windows 8 Pro</h3>
+                        <h3 style="display:inline;">Windows 8 Pro</h3>
+                        <input id="input-id" type="number" class="rating" min=0 max=5 step="0.5" data-size="xs" data-rtl="false"
+                               value="3.5" data-readonly="true" data-show-clear="false" data-show-caption="false">
                         <p>Windows 8 - The latest Microsoft OS</p>
-
-                            <input id="input-id" type="number" class="rating" min=0 max=5 step="0.5" data-size="lg" data-rtl="false" 
-                                   value="3.5" data-readonly="true" data-show-clear="false" data-show-caption="false">
                         <br />
+                        <a href="#">
+                            <div class="btn-group btn-group-justified btn-group-lg">
 
-                        <div class="btn-group btn-group-justified btn-group-lg">
                                 <h2 class="btn btn-danger btn-lg"> 999:-</h2>
 
 
-                                <a href="#" class="btn btn-primary btn-lg" role="button">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></a>
-                        </div> 
+                                <h2 class="btn btn-primary btn-lg" role="button">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></h2>
 
+                            </div>
+                        </a>
+                        <br />
+                        <a href="#">Write a Review</a>
                     </div>
                     <div style="clear:both"></div>
                     <div class="col-md-12">
@@ -53,12 +56,19 @@
                         </ul>
 
                         <div class="tab-content">
-                            <div class="tab-pane fade in active" id="Information"><h1>Windows 8</h1>
-                            <p>Windows 8 Pro Product Key Card is a physical product key card which contains the product key and link to use to upgrade your current operating system to Windows 8 Pro. This Product Key Card is Medialess, meaning that it does not include a DVD or CD for installation. You will download the program directly from Microsoft and use this product key to install and activate the software.
+                            <div class="tab-pane fade in active" id="Information">
+                                <h1>Windows 8</h1>
+                                <p>
+                                    Windows 8 Pro Product Key Card is a physical product key card which contains the product key and link to use to upgrade your current operating system to Windows 8 Pro. This Product Key Card is Medialess, meaning that it does not include a DVD or CD for installation. You will download the program directly from Microsoft and use this product key to install and activate the software.
 
-This is the physical key card which will be shipped to you. After installing Windows 8 Pro, you also have the option of upgrading to Windows 8.1 Pro in the Microsoft App store at no additional cost.</p></div>
+                                    This is the physical key card which will be shipped to you. After installing Windows 8 Pro, you also have the option of upgrading to Windows 8.1 Pro in the Microsoft App store at no additional cost.
+                                </p>
+                            </div>
 
-                            <div class="tab-pane fade" id="Reviews">Review</div>
+                            <div class="tab-pane fade" id="Reviews">
+                                @Html.Action("Comment", "Home")
+                                @Html.Action("Comment", "Home")
+                            </div>
                         </div>
 
                     </div>
