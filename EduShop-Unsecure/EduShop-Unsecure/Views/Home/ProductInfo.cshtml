@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "ProductInfo";
+}
+
+<link href="~/Content/Product.css" rel="stylesheet" />
+<link href="~/Content/star-rating.css" rel="stylesheet" />
+
+<h2>ProductInfo</h2>
+<article class="contentcontainer">
+    <div style="margin-top:20px;">
+        <link href="~/Content/Product.css" rel="stylesheet" />
+
+        <div>
+            @Html.Action("Sidebar", "Home")
+        </div>
+
+        <article class="col-md-9">
+            <section>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title"><span class="glyphicon glyphicon-th"></span>Operating System</h4>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="thumbnail">
+                            <img src="~/Images/windows8box.jpg" alt="" />
+                            <div class="caption">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <h3 style="display:inline;">Windows 8 Pro</h3>
+                        <input id="input-id" type="number" class="rating" min=0 max=5 step="0.5" data-size="xs" data-rtl="false"
+                               value="3.5" data-readonly="true" data-show-clear="false" data-show-caption="false">
+                        <p>Windows 8 - The latest Microsoft OS</p>
+                        <br />
+                        <a href="#">
+                            <div class="btn-group btn-group-justified btn-group-lg">
+
+                                <h2 class="btn btn-danger btn-lg"> 199 €</h2>
+
+
+                                <h2 class="btn btn-primary btn-lg" role="button">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></h2>
+
+                            </div>
+                        </a>
+                        <br />
+                        
+
+                        <a data-toggle="modal" data-target="#myModal" class="review-link">Write a Review</a>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Review</h4>
+                                    </div>
+                                    @Html.Action("Review","Home")
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+
+                    </div>
+                    <div style="clear:both"></div>
+                    <div class="col-md-12">
+
+                        <ul class="nav nav-tabs nav-justified" role="tablist">
+                            <li><a href="#Information" class="active" role="tab" data-toggle="tab">Information</a></li>
+                            <li><a href="#Reviews" role="tab" data-toggle="tab">Reviews <span class="badge">2</span></a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade in active" id="Information">
+                                <h1>Windows 8</h1>
+                                <p>
+                                    Windows 8 Pro Product Key Card is a physical product key card which contains the product key and link to use to upgrade your current operating system to Windows 8 Pro. This Product Key Card is Medialess, meaning that it does not include a DVD or CD for installation. You will download the program directly from Microsoft and use this product key to install and activate the software.
+
+                                    This is the physical key card which will be shipped to you. After installing Windows 8 Pro, you also have the option of upgrading to Windows 8.1 Pro in the Microsoft App store at no additional cost.
+                                </p>
+                            </div>
+
+                            <div class="tab-pane fade" id="Reviews">
+                                @Html.Action("Comment", "Home")
+                                @Html.Action("Comment", "Home")
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </article>
+    </div>
+    <div style="clear:both"></div>
+</article>

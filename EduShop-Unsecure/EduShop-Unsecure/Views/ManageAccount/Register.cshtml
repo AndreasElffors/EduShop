@@ -6,7 +6,7 @@
 <link href="~/Content/Forms.css" rel="stylesheet" />
 
 <article class="contentcontainer">
-    <section style="padding:20px;">
+    <section style="">
         <div class="col-md-6">
             <h1 style="font-family: verdana; color:gray;">Create an account.</h1>
             <h3 style="font-family: verdana; color:gray; text-align:justify;">This is where you register a new account to become a member at EduShop</h3>
@@ -18,16 +18,19 @@
                 <br />
                 @Html.LabelFor(m => Model.Password, "Password:")
                 @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
-                <br/>
+                <br />
                 @Html.LabelFor(m => Model.Password, "Firstname:")
                 @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
-                <br/>
+                <br />
                 @Html.LabelFor(m => Model.Password, "Lastname:")
                 @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
-                <br/>
+                <br />
                 @Html.LabelFor(m => Model.Password, "Address:")
                 @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
-                <br/>
+                <br />
+                @Html.LabelFor(m => Model.Password, "City:")
+                @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
+                <br />
                 @Html.LabelFor(m => Model.Password, "ZIP:")
                 @Html.TextBoxFor(m => Model.Password, new { @class = "form-control" })
                 <br />
@@ -35,28 +38,31 @@
             }
         </div>
         <div class="col-md-6">
-        </div>
-        <section class="row">
-            <div class="col-md-4">
-                <div class="circle">
-                    <p>Welcome to EduShop</p>
-                </div>
-            </div>
-            <div class="col-md-4">
+            <section class="row">
+
                 <div class="circle">
                     <div class="circletext">
-                        <p>This website is designed for you to try your security knowledge</p>
+                        <p>Please make sure that all information is correct before you register</p>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
+
                 <div class="circle">
-                    <p>Welcome to EduShop</p>
+                    <div class="circletext">
+                        <p>We will never ask you for your password. Do not share it with anyone!</p>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div style="clear:both;"></div>
-        </section>
+
+
+                <div class="circle">
+                    <div class="circletext">
+                        <p>If you like our service, please tell your family & friends about us!</p>
+                    </div>
+                </div>
+
+            </section>
+        </div>
+        <div style="clear:both;"></div>
+    </section>
 </article>
 
 
