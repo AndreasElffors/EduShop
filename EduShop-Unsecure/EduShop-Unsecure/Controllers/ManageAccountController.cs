@@ -28,10 +28,23 @@ namespace EduShop_Unsecure.Controllers
             return View();
         }
 
+        [ChildActionOnly]
         [HttpPost]
         public ActionResult Register(UserModel model)
         {
             return View(model);
+        }
+
+        public ActionResult ShoppingCart()
+        {
+            return PartialView("_ShoppingCart");         
+        }
+
+        [ChildActionOnly]
+        [HttpPost]
+        public ActionResult ShoppingCart(List<OrderRowModel> orderRows )
+        {
+            return PartialView("_ShoppingCart");
         }
     }
 }
