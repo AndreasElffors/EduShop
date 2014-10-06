@@ -18,6 +18,10 @@
     background-color:#ddd;
 }
 
+.nav-tabs.nav-justified > li > a {
+    border: 1px solid #ddd;
+}
+
 .whitestar .rating-container{
     color:white;
 }

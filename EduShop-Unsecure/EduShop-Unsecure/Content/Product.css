@@ -37,13 +37,12 @@ a.list-group-item:hover {
 .col-md-6 {
     padding: 30px 0px;
     border-left: 1px dotted #ddd;
-    margin:20px 0px;
-    padding:20px;
+    margin: 20px 0px;
+    padding: 20px;
 }
 
     .col-md-6:first-child {
         border-left: none;
-        
     }
 
 .col-md-12 {
@@ -53,7 +52,7 @@ a.list-group-item:hover {
 .price {
     color: red;
     font-size: 1.5rem;
-    margin:auto;
+    margin: auto;
 }
 
 .panel.panel-default {
@@ -87,4 +86,26 @@ a.list-group-item:hover {
     -ms-transition: all 500ms linear;
     transition: all 500ms linear;
     color: white;
+}
+
+.btn-danger:hover, .btn-danger:focus, .btn-danger:active, .btn-danger.active, .open .dropdown-toggle.btn-danger {
+    background-color: #D9534F;
+}
+
+.review-link:hover {
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.minheight {
+    min-height: 200px;
+}
+
+.thumbnail > a > img {
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    height: auto;
+    max-width: 100%;
 }

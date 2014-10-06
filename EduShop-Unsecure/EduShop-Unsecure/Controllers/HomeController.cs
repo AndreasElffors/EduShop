@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EduShop_Unsecure.Models;
 
 namespace EduShop_Unsecure.Controllers
 {
@@ -64,5 +65,18 @@ namespace EduShop_Unsecure.Controllers
         {
             return PartialView("_Comment");
         }
+
+        public ActionResult Review()
+        {
+            return PartialView("_Review", new ReviewModel());
+        }
+        [ChildActionOnly]
+        [HttpPost]
+        public ActionResult Review(ReviewModel review)
+        {
+            return PartialView("_Review");
+        }
+
+
     }
 }

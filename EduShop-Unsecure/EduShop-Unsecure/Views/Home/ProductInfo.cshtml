@@ -37,7 +37,7 @@
                         <a href="#">
                             <div class="btn-group btn-group-justified btn-group-lg">
 
-                                <h2 class="btn btn-danger btn-lg"> 999:-</h2>
+                                <h2 class="btn btn-danger btn-lg"> 199 €</h2>
 
 
                                 <h2 class="btn btn-primary btn-lg" role="button">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></h2>
@@ -45,7 +45,25 @@
                             </div>
                         </a>
                         <br />
-                        <a href="#">Write a Review</a>
+                        
+
+                        <a data-toggle="modal" data-target="#myModal" class="review-link">Write a Review</a>
+                        
+                        <!-- Modal -->
+                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Review</h4>
+                                    </div>
+                                    @Html.Action("Review","Home")
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+
                     </div>
                     <div style="clear:both"></div>
                     <div class="col-md-12">
