@@ -51,7 +51,16 @@ INSERT INTO [dbo].[UserSet]
            '20500',
            'Washington DC',
            '1202-456-1111',
-           '1')
+           '1'),
+		   ('jayleno@latenightshow.com',
+		   '1234',
+		   'Jay',
+		   'Leno',
+		   'Queens Street 2',
+		   '20500',
+		   'New York',
+		   '555-2223-455',
+		   '0')
 
 GO
 
@@ -64,8 +73,13 @@ INSERT INTO [dbo].[ReviewSet]
      VALUES
            ('A decent OS',
            'Windows 8 is a decent OS but i still prefer Windows 7',
-           '2.5',
+           2.5,
            '2014-10-06',
-           1)
+           1),
+		   ('Rubbish',
+		   'Did not like it at all! Cant wait for the next Windows...',
+		   0,
+		   '2014-10-07',
+		   1)
 
 		   GO
