@@ -32,9 +32,11 @@ namespace EduShop_Unsecure.Controllers
         //    return PartialView("_ProductPartial");
         //}
 
-        public ActionResult ProductInfo()
+        public ActionResult ProductInfo(int id)
         {
-            return View();
+            var productModel = ProductModel.ConvertToProductModel(ProductModel.GetProduct(id));
+
+            return View(productModel);
         }
 
         [ChildActionOnly]
@@ -51,9 +53,9 @@ namespace EduShop_Unsecure.Controllers
         }
 
 
-        public ActionResult Comment()
+        public ActionResult Comment(int id)
         {
-            return PartialView("_Comment");
+            return PartialView("_Comment", ReviewModel.ReviewModelsToList(id));
         }
         [ChildActionOnly]
         [HttpPost]
@@ -62,9 +64,9 @@ namespace EduShop_Unsecure.Controllers
             return PartialView("_Comment");
         }
 
-        public ActionResult Review()
+        public ActionResult Review(int id)
         {
-            return PartialView("_Review", new ReviewModel());
+            return PartialView("_Review");
         }
         [ChildActionOnly]
         [HttpPost]

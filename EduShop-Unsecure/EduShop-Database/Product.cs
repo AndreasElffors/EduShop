@@ -27,10 +27,9 @@ namespace EduShop_Database
         public string ImgUrl { get; set; }
         public double AverageRating { get; set; }
         public string Description { get; set; }
-        public int CategoryId { get; set; }
+        public string Category { get; set; }
     
         public virtual ICollection<OrderRow> OrderRow { get; set; }
         public virtual ICollection<Review> Review { get; set; }
-        public virtual Category Category { get; set; }
     }
 }

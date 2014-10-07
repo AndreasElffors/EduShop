@@ -11,7 +11,6 @@
     <EntitySet Name="OrderSet" EntityType="EduShopModel.Store.OrderSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderRowSet" EntityType="EduShopModel.Store.OrderRowSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ReviewSet" EntityType="EduShopModel.Store.ReviewSet" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="CategorySet" EntityType="EduShopModel.Store.CategorySet" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="UserOrder" Association="EduShopModel.Store.UserOrder">
       <End Role="User" EntitySet="UserSet" />
       <End Role="Order" EntitySet="OrderSet" />
@@ -27,10 +26,6 @@
     <AssociationSet Name="ProductReview" Association="EduShopModel.Store.ProductReview">
       <End Role="Product" EntitySet="ProductSet" />
       <End Role="Review" EntitySet="ReviewSet" />
-    </AssociationSet>
-    <AssociationSet Name="CategoryProduct" Association="EduShopModel.Store.CategoryProduct">
-      <End Role="Category" EntitySet="CategorySet" />
-      <End Role="Product" EntitySet="ProductSet" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="UserSet">
@@ -59,7 +54,7 @@
     <Property Name="ImgUrl" Type="nvarchar(max)" Nullable="false" />
     <Property Name="AverageRating" Type="float" Nullable="false" />
     <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderSet">
     <Key>
@@ -93,14 +88,6 @@
     <Property Name="Rating" Type="float" Nullable="false" />
     <Property Name="DateAdded" Type="datetime" Nullable="false" />
     <Property Name="ProductId" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="CategorySet">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <Association Name="UserOrder">
     <End Role="User" Type="EduShopModel.Store.UserSet" Multiplicity="1" />
@@ -150,18 +137,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="CategoryProduct">
-    <End Role="Category" Type="EduShopModel.Store.CategorySet" Multiplicity="1" />
-    <End Role="Product" Type="EduShopModel.Store.ProductSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Category">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Product">
-        <PropertyRef Name="CategoryId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -172,7 +147,6 @@
           <EntitySet Name="OrderSet" EntityType="EduShopModel.Order" />
           <EntitySet Name="OrderRowSet" EntityType="EduShopModel.OrderRow" />
           <EntitySet Name="ReviewSet" EntityType="EduShopModel.Review" />
-          <EntitySet Name="CategorySet" EntityType="EduShopModel.Category" />
           <AssociationSet Name="UserOrder" Association="EduShopModel.UserOrder">
             <End Role="User" EntitySet="UserSet" />
             <End Role="Order" EntitySet="OrderSet" />
@@ -188,10 +162,6 @@
           <AssociationSet Name="ProductReview" Association="EduShopModel.ProductReview">
             <End Role="Product" EntitySet="ProductSet" />
             <End Role="Review" EntitySet="ReviewSet" />
-          </AssociationSet>
-          <AssociationSet Name="CategoryProduct" Association="EduShopModel.CategoryProduct">
-            <End Role="Category" EntitySet="CategorySet" />
-            <End Role="Product" EntitySet="ProductSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="User">
@@ -223,8 +193,7 @@
           <Property Name="Description" Type="String" Nullable="false" />
           <NavigationProperty Name="OrderRow" Relationship="EduShopModel.ProductOrderRow" FromRole="Product" ToRole="OrderRow" />
           <NavigationProperty Name="Review" Relationship="EduShopModel.ProductReview" FromRole="Product" ToRole="Review" />
-          <NavigationProperty Name="Category" Relationship="EduShopModel.CategoryProduct" FromRole="Product" ToRole="Category" />
-          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" />
         </EntityType>
         <EntityType Name="Order">
           <Key>
@@ -263,15 +232,6 @@
           <Property Name="DateAdded" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="Product" Relationship="EduShopModel.ProductReview" FromRole="Review" ToRole="Product" />
           <Property Name="ProductId" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="Category">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" Nullable="false" />
-          <Property Name="Description" Type="String" Nullable="false" />
-          <NavigationProperty Name="Product" Relationship="EduShopModel.CategoryProduct" FromRole="Category" ToRole="Product" />
         </EntityType>
         <Association Name="UserOrder">
           <End Type="EduShopModel.User" Role="User" Multiplicity="1" />
@@ -321,18 +281,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="CategoryProduct">
-          <End Type="EduShopModel.Category" Role="Category" Multiplicity="1" />
-          <End Type="EduShopModel.Product" Role="Product" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Category">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="Product">
-              <PropertyRef Name="CategoryId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -365,7 +313,7 @@
           <ScalarProperty Name="ImgUrl" ColumnName="ImgUrl" />
           <ScalarProperty Name="AverageRating" ColumnName="AverageRating" />
           <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -402,15 +350,6 @@
           <ScalarProperty Name="Rating" ColumnName="Rating" />
           <ScalarProperty Name="DateAdded" ColumnName="DateAdded" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="CategorySet">
-      <EntityTypeMapping TypeName="IsTypeOf(EduShopModel.Category)">
-        <MappingFragment StoreEntitySet="CategorySet">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

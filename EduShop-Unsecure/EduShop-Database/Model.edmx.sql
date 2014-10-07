@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/06/2014 14:08:46
--- Generated from EDMX file: C:\Users\Joel\Desktop\EduShop\EduShop-Unsecure\EduShop-Database\Model.edmx
+-- Date Created: 10/07/2014 15:04:45
+-- Generated from EDMX file: C:\Users\Andreas\Documents\Webb utveckling\LIA\Edument\EduShop\EduShop-Unsecure\EduShop-Database\Model.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -29,9 +29,6 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_ProductReview]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[ReviewSet] DROP CONSTRAINT [FK_ProductReview];
 GO
-IF OBJECT_ID(N'[dbo].[FK_CategoryProduct]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[ProductSet] DROP CONSTRAINT [FK_CategoryProduct];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -51,9 +48,6 @@ IF OBJECT_ID(N'[dbo].[OrderRowSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[ReviewSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ReviewSet];
-GO
-IF OBJECT_ID(N'[dbo].[CategorySet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[CategorySet];
 GO
 
 -- --------------------------------------------------
@@ -84,7 +78,7 @@ CREATE TABLE [dbo].[ProductSet] (
     [ImgUrl] nvarchar(max)  NOT NULL,
     [AverageRating] float  NOT NULL,
     [Description] nvarchar(max)  NOT NULL,
-    [CategoryId] int  NOT NULL
+    [Category] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -121,14 +115,6 @@ CREATE TABLE [dbo].[ReviewSet] (
 );
 GO
 
--- Creating table 'CategorySet'
-CREATE TABLE [dbo].[CategorySet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Name] nvarchar(max)  NOT NULL,
-    [Description] nvarchar(max)  NOT NULL
-);
-GO
-
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -160,12 +146,6 @@ GO
 -- Creating primary key on [Id] in table 'ReviewSet'
 ALTER TABLE [dbo].[ReviewSet]
 ADD CONSTRAINT [PK_ReviewSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
--- Creating primary key on [Id] in table 'CategorySet'
-ALTER TABLE [dbo].[CategorySet]
-ADD CONSTRAINT [PK_CategorySet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -231,21 +211,6 @@ GO
 CREATE INDEX [IX_FK_ProductReview]
 ON [dbo].[ReviewSet]
     ([ProductId]);
-GO
-
--- Creating foreign key on [CategoryId] in table 'ProductSet'
-ALTER TABLE [dbo].[ProductSet]
-ADD CONSTRAINT [FK_CategoryProduct]
-    FOREIGN KEY ([CategoryId])
-    REFERENCES [dbo].[CategorySet]
-        ([Id])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_CategoryProduct'
-CREATE INDEX [IX_FK_CategoryProduct]
-ON [dbo].[ProductSet]
-    ([CategoryId]);
 GO
 
 -- --------------------------------------------------

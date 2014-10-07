@@ -10,12 +10,10 @@
         <EntityTypeShape EntityType="EduShopModel.Order" Width="1.5" PointX="5.375" PointY="0.5" />
         <EntityTypeShape EntityType="EduShopModel.OrderRow" Width="1.5" PointX="3.25" PointY="0.5" />
         <EntityTypeShape EntityType="EduShopModel.Review" Width="1.5" PointX="5.125" PointY="3.625" FillColor="Maroon" />
-        <EntityTypeShape EntityType="EduShopModel.Category" Width="1.5" PointX="3.125" PointY="3.5" FillColor="Maroon" />
         <AssociationConnector Association="EduShopModel.UserOrder" />
         <AssociationConnector Association="EduShopModel.OrderOrderRow" />
         <AssociationConnector Association="EduShopModel.ProductOrderRow" />
         <AssociationConnector Association="EduShopModel.ProductReview" />
-        <AssociationConnector Association="EduShopModel.CategoryProduct" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

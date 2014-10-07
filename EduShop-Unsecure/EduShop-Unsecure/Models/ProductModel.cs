@@ -14,7 +14,7 @@ namespace EduShop_Unsecure.Models
         private static readonly EduShop_Database.EduShopEntities context = new EduShopEntities();
 
         public int Id { get; set; }
-        public int CategoryId { get; set; }
+        public string Category { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public string ShortDescription { get; set; }
@@ -44,7 +44,7 @@ namespace EduShop_Unsecure.Models
                 Id = product.Id,
                 Description = product.Description,
                 AverageRating = product.AverageRating,
-                CategoryId = product.CategoryId,
+                Category = product.Category,
                 ImgUrl = product.ImgUrl,
                 Name = product.Name,
                 Price = product.Price,
@@ -61,7 +61,7 @@ namespace EduShop_Unsecure.Models
                 Id = productModel.Id,
                 Description = productModel.Description,
                 AverageRating = productModel.AverageRating,
-                CategoryId = productModel.CategoryId,
+                Category = productModel.Category,
                 ImgUrl = productModel.ImgUrl,
                 Name = productModel.Name,
                 Price = productModel.Price,

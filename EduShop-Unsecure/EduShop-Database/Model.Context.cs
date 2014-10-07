@@ -30,6 +30,5 @@ namespace EduShop_Database
         public virtual DbSet<Order> OrderSet { get; set; }
         public virtual DbSet<OrderRow> OrderRowSet { get; set; }
         public virtual DbSet<Review> ReviewSet { get; set; }
-        public virtual DbSet<Category> CategorySet { get; set; }
     }
 }
