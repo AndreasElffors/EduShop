@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduShop-Unsecure", "EduShop
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduShop-Database", "EduShop-Database\EduShop-Database.csproj", "{7314CD07-48E3-46C0-817D-377658D212FE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduShopDB", "EduShopDB\EduShopDB.csproj", "{46A01287-2891-48A7-870B-EF4FA6AFE2CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7314CD07-48E3-46C0-817D-377658D212FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7314CD07-48E3-46C0-817D-377658D212FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7314CD07-48E3-46C0-817D-377658D212FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A01287-2891-48A7-870B-EF4FA6AFE2CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A01287-2891-48A7-870B-EF4FA6AFE2CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A01287-2891-48A7-870B-EF4FA6AFE2CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A01287-2891-48A7-870B-EF4FA6AFE2CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

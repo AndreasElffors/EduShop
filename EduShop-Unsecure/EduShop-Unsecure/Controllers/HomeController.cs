@@ -16,28 +16,24 @@ namespace EduShop_Unsecure.Controllers
 
         public ActionResult Product()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            return View(ProductModel.ProductModelsToList());
         }
 
-        [ChildActionOnly]
-        public ActionResult ProductPartial()
+        public ActionResult ProductPartial(int id)
         {
-            return PartialView("_ProductPartial");
+            var productModel = ProductModel.ConvertToProductModel(ProductModel.GetProduct(id));
+
+            return PartialView("_ProductPartial", productModel);
         }
 
-        [ChildActionOnly]
-        [HttpPost]
-        public ActionResult ProductPartial(string product)
-        {
-            return PartialView("_ProductPartial");
-        }
+        //[HttpPost]
+        //public ActionResult ProductPartial(string product)
+        //{
+        //    return PartialView("_ProductPartial");
+        //}
 
         public ActionResult ProductInfo()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
         }
 

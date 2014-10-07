@@ -7,7 +7,8 @@ INSERT INTO [dbo].[CategorySet]
            ,'An operating system (OS) is software that manages computer hardware and software resources and provides common services for computer programs.'),
 		   ('Anti-Malware software','Keeps your Pc safe and healthy'),
 		   ('Adobe','Adobe software'),
-		   ('Microsoft','Office related software')
+		   ('Microsoft','Office related software'),
+		   ('Plugins','In computing, a plug-in (or add-in / addin, plugin, extension or add-on / addon) is a software component that adds a specific feature to an existing software application.')
 
 		   GO
 
@@ -27,7 +28,14 @@ INSERT INTO [dbo].[ProductSet]
            '2', 
 		   'Windows 8 Pro Product Key Card is a physical product key card which contains the product key and link to use to upgrade your current operating system to Windows 8 Pro. This Product Key Card is Medialess, meaning that it does not include a DVD or CD for installation. You will download the program directly from Microsoft and use this product key to install and activate the software.
 				 This is the physical key card which will be shipped to you. After installing Windows 8 Pro, you also have the option of upgrading to Windows 8.1 Pro in the Microsoft App store at no additional cost.',
-           '1')
+           1),
+		   ('Mac OS',
+		   '399',
+		   'The newest Mac OS',
+		   '~/Images/Dummy_Item_Image(245x245).png',
+		   '3',
+		   'Mac OS is a series of graphical user interface-based operating systems developed by Apple Inc. for their Macintosh line of computer systems.',
+		   1)
 		   
 
 GO

@@ -188,6 +188,7 @@
     <Content Include="Content\ShoppingCart.css" />
     <Content Include="Content\Sidebar.css" />
     <Content Include="Content\star-rating.css" />
+    <Content Include="Images\Dummy_Item_Image%28245x245%29.png" />
     <Content Include="Scripts\star-rating.js" />
     <Content Include="Scripts\star-rating.min.js" />
     <Content Include="favicon.ico" />
@@ -271,6 +272,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EduShop-Database\EduShop-Database.csproj">
+      <Project>{7314cd07-48e3-46c0-817d-377658d212fe}</Project>
+      <Name>EduShop-Database</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
