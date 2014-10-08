@@ -11,7 +11,7 @@
             <p style="min-height: 40px;">@Model.ShortDescription</p>
             <p>
                 <div class="btn-group btn-group-justified btn-group-lg">
-                    <a href="#" class="btn btn-primary btn-lg" role="button">199 <span class="glyphicon glyphicon-shopping-cart"></span></a>
+                    <a href="#" class="btn btn-primary btn-lg" role="button">@Model.Price <span class="glyphicon glyphicon-shopping-cart"></span></a>
                     <a href="@Url.Action("ProductInfo","Home", new {Model.Id})" class=" btn btn-default btn-lg" role="button">Info</a>
                 </div>
             </p>

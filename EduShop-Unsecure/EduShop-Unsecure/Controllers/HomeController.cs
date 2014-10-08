@@ -14,9 +14,26 @@ namespace EduShop_Unsecure.Controllers
             return View();
         }
 
-        public ActionResult Product()
+        //public ActionResult Product()
+        //{
+
+        //}
+
+        public ActionResult Product(string category, string search)
         {
-            return View(ProductModel.ProductModelsToList());
+            if (category == null && search==null)
+            {
+                return View(ProductModel.ProductModelsToList());
+            }
+            else if (search!=null)
+            {
+                return View(ProductModel.ProductModelsToListSearch(search));
+            }
+            else
+            {
+                return View(ProductModel.ProductModelsToListCategory(category));
+            }
+
         }
 
         public ActionResult ProductPartial(int id)
@@ -73,6 +90,11 @@ namespace EduShop_Unsecure.Controllers
         public ActionResult Review(ReviewModel review)
         {
             return PartialView("_Review");
+        }
+
+        public ActionResult Search(SearchModel searchModel)
+        {
+            return PartialView("_Search", searchModel);
         }
 
 

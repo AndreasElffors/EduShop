@@ -37,6 +37,23 @@ namespace EduShop_Unsecure.Models
                 select c).FirstOrDefault();
         }
 
+        public static List<Product> GetProductsOnCategory(string category)
+        {
+            return (
+                from c in context.ProductSet
+                where c.Category == category
+                select c).ToList();
+        }
+
+        public static List<Product> GetProductsOnSearch(string search)
+        {
+            return (
+                from c in context.ProductSet
+                where c.Category.Contains(search) || c.Name.Contains(search)
+                select c).ToList();
+        }
+
+
         public static ProductModel ConvertToProductModel(Product product)
         {
             var productModel = new ProductModel()
@@ -84,5 +101,32 @@ namespace EduShop_Unsecure.Models
             return allProductModels;
         }
 
+        public static List<ProductModel> ProductModelsToListCategory(string category)
+        {
+            var allProductModels = new List<ProductModel>();
+            var allProducts = new List<Product>();
+
+            allProducts = GetProductsOnCategory(category);
+
+            foreach (var item in allProducts)
+            {
+                allProductModels.Add(ConvertToProductModel(item));
+            }
+            return allProductModels;
+        }
+
+        public static List<ProductModel> ProductModelsToListSearch(string search)
+        {
+            var allProductModels = new List<ProductModel>();
+            var allProducts = new List<Product>();
+
+            allProducts = GetProductsOnSearch(search);
+
+            foreach (var item in allProducts)
+            {
+                allProductModels.Add(ConvertToProductModel(item));
+            }
+            return allProductModels;
+        }
     }
 }
