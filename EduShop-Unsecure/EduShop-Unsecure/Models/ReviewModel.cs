@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using EduShop_Database;
+using Microsoft.Ajax.Utilities;
 
 namespace EduShop_Unsecure.Models
 {
@@ -27,12 +28,12 @@ namespace EduShop_Unsecure.Models
                 Content = review.Content,
                 Title = review.Title,
                 Rating = review.Rating,
-                DateAdded = review.DateAdded
+                DateAdded = review.DateAdded 
             };
             return reviewModel;
         }
 
-        public static Review ConvertToReviewModel(ReviewModel review)
+        public static Review ConvertToReview(ReviewModel review)
         {
             var reviewModel = new Review()
             {
@@ -51,7 +52,14 @@ namespace EduShop_Unsecure.Models
             return (
                 from c in context.ReviewSet
                 where c.ProductId == id
+                orderby c.DateAdded descending 
                 select c).ToList();
+        }
+
+        public static int AddReview(Review review)
+        {
+            context.ReviewSet.Add(review);
+            return context.SaveChanges();
         }
 
         public static List<ReviewModel> ReviewModelsToList(int id)

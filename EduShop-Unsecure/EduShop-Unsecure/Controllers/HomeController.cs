@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -49,7 +50,20 @@ namespace EduShop_Unsecure.Controllers
         {
             var productModel = ProductModel.ConvertToProductModel(ProductModel.GetProduct(id));
 
-            return View(productModel);
+            var productinfoModel = new ProductInfoModel()
+            {
+                ProductModel = productModel,
+                ReviewModel = null
+            };
+
+            return View(productinfoModel);
+        }
+
+        [HttpPost]
+        public ActionResult ProductInfo(ProductInfoModel review)
+        {
+            ReviewModel.AddReview(ReviewModel.ConvertToReview(review.ReviewModel));
+            return RedirectToAction("ProductInfo", "Home", new { id = review.ReviewModel.ProductId });
         }
 
         [ChildActionOnly]
@@ -79,17 +93,21 @@ namespace EduShop_Unsecure.Controllers
 
         public ActionResult Review(int id)
         {
+            ViewBag.ProductId = id;
             return PartialView("_Review");
         }
-        [ChildActionOnly]
+
         [HttpPost]
         public ActionResult Review(ReviewModel review)
         {
-            return PartialView("_Review");
+
+            ReviewModel.AddReview(ReviewModel.ConvertToReview(review));
+            return RedirectToAction("ProductInfo", "Home", new {id = review.ProductId});
         }
 
         public ActionResult Search(SearchModel searchModel)
         {
+
             return PartialView("_Search", searchModel);
         }
 

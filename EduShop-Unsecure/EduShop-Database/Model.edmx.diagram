@@ -6,10 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="7547d6f685fd41ebbb460a2277fd90d4" Name="Diagram1" >
         <EntityTypeShape EntityType="EduShopModel.User" Width="1.5" PointX="8.75" PointY="0.5" FillColor="Lime" />
-        <EntityTypeShape EntityType="EduShopModel.Product" Width="1.5" PointX="0.75" PointY="0.5" FillColor="Maroon" />
-        <EntityTypeShape EntityType="EduShopModel.Order" Width="1.5" PointX="5.375" PointY="0.5" />
-        <EntityTypeShape EntityType="EduShopModel.OrderRow" Width="1.5" PointX="3.25" PointY="0.5" />
-        <EntityTypeShape EntityType="EduShopModel.Review" Width="1.5" PointX="5.125" PointY="3.625" FillColor="Maroon" />
+        <EntityTypeShape EntityType="EduShopModel.Product" Width="1.5" PointX="3.5" PointY="0.5" FillColor="Maroon" />
+        <EntityTypeShape EntityType="EduShopModel.Order" Width="1.5" PointX="7" PointY="0.5" />
+        <EntityTypeShape EntityType="EduShopModel.OrderRow" Width="1.5" PointX="5.25" PointY="0.5" />
+        <EntityTypeShape EntityType="EduShopModel.Review" Width="1.5" PointX="1.75" PointY="0.5" FillColor="Maroon" />
         <AssociationConnector Association="EduShopModel.UserOrder" />
         <AssociationConnector Association="EduShopModel.OrderOrderRow" />
         <AssociationConnector Association="EduShopModel.ProductOrderRow" />

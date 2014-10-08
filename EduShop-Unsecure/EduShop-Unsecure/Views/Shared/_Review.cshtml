@@ -4,10 +4,10 @@
 
     <div class="modal-body">
         <label>
+            
             Rating:
-            <input id="input-id" type="number" class="rating" min=0 max=5 step="0.5" data-size="xs"
-                   data-rtl="false" data-show-clear="false" data-show-caption="false">
-
+            <input id="input-id" type="number" class="rating" min=0 max=5 step="1" data-size="xs"
+                   data-rtl="false" data-show-clear="false" data-show-caption="false" name="Rating">
         </label>
         <br />
         @Html.LabelFor(m => Model.Title, "Title:")
@@ -16,10 +16,12 @@
         @Html.LabelFor(m => Model.Content, "Review:")
         @Html.TextAreaFor(m => Model.Content, new { @class = "form-control minheight"})
 
-
+        @Html.HiddenFor(m => Model.DateAdded, new { Value = DateTime.Now })
+        @Html.HiddenFor(m => Model.ProductId, new {Value = ViewBag.ProductId})
+        @*@Html.HiddenFor(m => Model.Rating, new {Value = "StarRating"})*@
     </div>
     <div class="modal-footer">
-        <input type="submit" class="btn btn-primary" value="Submit Review" />
+        <input type="submit" class="btn btn-primary" value="Submit Review"/>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
     </div>
 }
