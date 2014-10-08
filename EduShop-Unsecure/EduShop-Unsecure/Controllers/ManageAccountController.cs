@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using EduShop_Database;
 using EduShop_Unsecure.Models;
 
 namespace EduShop_Unsecure.Controllers
@@ -20,6 +21,13 @@ namespace EduShop_Unsecure.Controllers
         [HttpPost]
         public ActionResult Login(UserModel model)
         {
+            var userModel = new UserModel();//todo....
+            var user = new User();
+
+            user = UserModel.CheckForUser(model);
+
+            userModel = UserModel.ConvertToUserModel(user);
+          
             return PartialView("_Login");
         }
 

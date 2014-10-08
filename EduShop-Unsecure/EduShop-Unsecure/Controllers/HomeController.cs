@@ -18,21 +18,17 @@ namespace EduShop_Unsecure.Controllers
         //{
 
         //}
-
         public ActionResult Product(string category, string search)
         {
             if (category == null && search==null)
             {
                 return View(ProductModel.ProductModelsToList());
             }
-            else if (search!=null)
+             if (search!=null)
             {
                 return View(ProductModel.ProductModelsToListSearch(search));
             }
-            else
-            {
                 return View(ProductModel.ProductModelsToListCategory(category));
-            }
 
         }
 

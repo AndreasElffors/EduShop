@@ -1,14 +1,15 @@
 ﻿@model EduShop_Unsecure.Models.SearchModel
 
-@using (Html.BeginForm())
-{
 
+
+@using (Html.BeginForm("Product", "Home", FormMethod.Get))
+{
     <div class="input-group" style="margin-right:20px">
-        @using (Html.BeginForm("Product","Home"))
-        {
-            @Html.TextBoxFor(m => Model.SearchTerm, new { @class = "form-control" })
-            <input id="Searchbox" type="search" name="search" @Model.SearchTerm=value/>
-            <a class="input-group-addon glyphicon glyphicon-search" href="@Url.Action("Product", "Home",new {search = Model.SearchTerm })"></a>
-        }
+
+        <input id="Searchbox" type="search" name="search" class="form-control" placeholder="Search" />
+
+        <a class="input-group-addon glyphicon glyphicon-search" href="@Url.Action("Product", "Home")"></a>
     </div>
 }
+
+
