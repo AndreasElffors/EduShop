@@ -61,12 +61,5 @@
                 </div>
             </div>
         </div>
-        @{
-            var validCookie = Request.Cookies["Auth"];
-        }
-        @if (validCookie != null)
-        {
-            <p>@validCookie</p>
-        }
     </section>
 </article>
