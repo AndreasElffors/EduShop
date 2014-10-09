@@ -1,12 +1,13 @@
 ﻿body {
-    background-color:#F1F0FF;
+    background-color: #F1F0FF;
     font-family: verdana;
 }
-h1,h2,h3{
-    color:gray;
+
+h1, h2, h3 {
+    color: gray;
 }
 
-footer{
+footer {
 }
 
 .navbar-toggle {
@@ -16,13 +17,22 @@ footer{
 .navbar-inverse {
     background-color: #f5f5f5;
     border-color: #ddd;
+            -webkit-transition: all 500ms linear;
+        -moz-transition: all 500ms linear;
+        -o-transition: all 500ms linear;
+        -ms-transition: all 500ms linear;
+        transition: all 500ms linear;
 }
 
     .navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
         color: #fff;
-        background-color: transparent;
         background-color: #521984;
         border-right: dotted 1px black;
+        -webkit-transition: all 500ms linear;
+        -moz-transition: all 500ms linear;
+        -o-transition: all 500ms linear;
+        -ms-transition: all 500ms linear;
+        transition: all 500ms linear;
     }
 
     .navbar-inverse .navbar-nav > li > a {
@@ -61,7 +71,7 @@ input[type="checkbox"] {
 }
 
 .contentcontainer {
-    background-color:white;
+    background-color: white;
     -webkit-box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
     -ms-box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
     box-shadow: 10px 10px 10px rgba(0,0,0,0.3);
@@ -102,8 +112,8 @@ input[type="checkbox"] {
         -o-transition: all 500ms linear;
         -ms-transition: all 500ms linear;
         transition: all 500ms linear;
-        transform:scale(1.05);
-        opacity:0.9;
+        transform: scale(1.05);
+        opacity: 0.9;
     }
 
 .col-md-4 {
